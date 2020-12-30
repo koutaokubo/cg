@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>軽食・デザート</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
   <header>
@@ -16,10 +19,21 @@
       </ul>
     </nav>
   </header>
-  <h1>デザート・軽食</h1>
+  <h1><button class="keisyoku">デザート・軽食</button></h1>
   <div class="lunch">
     <img src="../学食/keishoku.jpg" alt="エントランス" class="lunch">
     写真はカツサンドとハニートーストです。ハニートーストはまだ食べたことがないのですが、<br>カツサンドは何度か食べたことがあります。３００円とは思えないボリュームとおいしさです。<br>ほかにもたくさんの軽食があるので、ぜひ試してほしいです！
   </div>
+  <script>
+    $(".keisyoku").button({
+        icons: {
+          primary: "ui-icon-triangle-1-e"
+        }
+      });
+      $(".lunch").hide();
+      $('.keisyoku').click(function () {
+        $(".lunch").toggle("explode");
+      });
+  </script>
 </body>
 </html>

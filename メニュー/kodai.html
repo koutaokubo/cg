@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>工大ランチ</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
   <header>
@@ -11,19 +14,45 @@
       <ul class="menu">
         <li><a href="kodai.html">工大ランチ</a></li>
         <li><a href="menrui.html">麺類</a></li>
-        <li><a href="メニュー/kurry.html">カレー</a></li>
-        <li><a href="メニュー/keisyoku.html">軽食・その他</a></li>
+        <li><a href="kurry.html">カレー</a></li>
+        <li><a href="keisyoku.html">軽食・その他</a></li>
       </ul>
     </nav>
   </header>
   <h1>工大ランチ</h1>
   <div class="lunch">
-    <h2>工大ランチA・B</h2>
+    <h2><button class="kodai">工大ランチA・B</button></h2>
+    <div class="open">
     <img src="../学食/koudaiab.jpg" alt="Aランチ" class="lunch">
     <p><br>写真は工大ランチのA・Bセットです。こちらのお値段はな、な、なんと！！３００円です。<br>ものすごくコスパがいいです！しかもとてもおいしいです。日替わりでメインが変わるので毎日食べても飽きないおいしさです。</br><br><br><br></p>
-    <h2>工大ランチC</h2>
+    </div>
+    <h2><button class="kodaic">工大ランチC</button></h2>
+    <div class="openc">
     <img src="../学食/koudaic.jpg" alt="Cランチ" class="lunch">
     <p><br>写真は工大ランチのCセットです。ほかのランチと比べると５０円高くなるのですが、その分少しだけ献立が豪華になっています。それでも３５０円という値段で提供されるのでものすごくコスパがいいですね。</p>
+    </div>
   </div>
+  <script>
+  $(function() {
+    $(".open").hide();
+    $(".openc").hide();
+    $(".kodai").button({
+      icons:{
+        primary:"ui-icon-triangle-1-e"
+      }
+    });
+    $('.kodai').click(function () {
+      $('.open').show("slow");
+    });
+    $(".kodaic").button({
+      icons: {
+        primary: "ui-icon-triangle-1-e"
+      }
+    });
+    $('.kodaic').click(function () {
+      $('.openc').show("slow");
+    });
+  });
+  </script>
 </body>
 </html>

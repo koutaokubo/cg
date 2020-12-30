@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>カレー</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
   <header>
@@ -16,10 +19,21 @@
       </ul>
     </nav>
   </header>
-  <h1>カレー</h1>
+  <h1><button class="kurry">カレー</button></h1>
   <div class="lunch">
     <img src="../学食/kurry.jpg" alt="カレー" class="lunch">
     写真はヒレカツカレーです。写真を見ればわかる通り、日替わりでカレーの種類が変わっていくので<br>飽きることがありません。また、普通のカレーもあり、そちらは２５０円で食べることができます。<br>個人的には千葉工業大学のカレーはとても好きです。
   </div>
+  <script>
+    $(".kurry").button({
+        icons: {
+          primary: "ui-icon-triangle-1-e"
+        }
+      });
+      $(".lunch").hide();
+      $('.kurry').click(function () {
+          $(".lunch").toggle("drop");
+        });
+  </script>
 </body>
 </html>
